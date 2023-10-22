@@ -10,7 +10,17 @@ const flightSchema = new mongoose.Schema({
         enum: ['JFK', 'DCA', 'IAD', 'LGA']
     },
     flightNo: Number,
-    departs: Date
-})
+    departs: Date,
+    // nav: [{
+    //     name: string,
+    //     url: '/flights',
+    //     target: '_self'
+    //   }, {
+    //     name: string,
+    //     url: '/new',
+    //     target: '_self'
+    //   }]
+    });
+
 
 module.exports = mongoose.model('Flight', flightSchema);
