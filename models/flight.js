@@ -9,15 +9,19 @@ const flightSchema = new mongoose.Schema({
         type: String,
         enum: ['JFK', 'DCA', 'IAD', 'LGA']
     },
-    flightNo: Number,
+    flightNo:{
+        type: Number,
+        min: 10,
+        max: 9999
+    },
     departs: Date,
     // nav: [{
     //     name: string,
-    //     url: '/flights',
+    //     url: string,
     //     target: '_self'
     //   }, {
     //     name: string,
-    //     url: '/new',
+    //     url: String,
     //     target: '_self'
     //   }]
     });
