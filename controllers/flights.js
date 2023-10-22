@@ -10,7 +10,7 @@ async function index(req, res){
     try {
         const flightDocuments = await Flight.find({});
         console.log('flightDocuments', flightDocuments)
-        res.render('flights/index', {flightDocuments: flightDocuments})
+        res.render('flights/index', {flightDocs: flightDocuments})
 
     } catch(err){
         res.send(err)
@@ -22,7 +22,11 @@ function newFlights(req, res) {
 }
 
 async function create(req, res, next) {
-    console.log(req.body);
-    //this is where can make it where the user has to enter a number that is between
-
+    try {
+    console.log(req.body)
+      const flightDoc = await Flight.create(req.body);
+      res.redirect("/flights");
+    } catch (err) {
+      res.send(err);
+    }
 }

@@ -11,27 +11,27 @@
 
 	<h2>Create Flights</h2>
 	<form action="/flights" method="POST">
-		<label>Airline
+		<label>Airline:
 			<select name="airline">
-				<option value="Delta">G</option>
-				<option value="United">PG</option>
-				<option value="American">PG-13</option>
-				<option value="British Airways">R</option>
+				<option value="Delta">Delta</option>
+				<option value="United">United</option>
+				<option value="American">American</option>
+				<option value="British Airways">British Airways</option>
 			</select>
 		</label><br>
         <label>Airport
 			<select name="airport">
-				<option value="JFK">G</option>
-				<option value="LGA">PG</option>
-				<option value="DCA">PG-13</option>
-				<option value="IAD">R</option>
+				<option value="JFK">JFK</option>
+				<option value="LGA">LGA</option>
+				<option value="DCA">DCA</option>
+				<option value="IAD">IAD</option>
 			</select>
 		</label><br>
         <label>Flight Number:
-			<input type="number" name="enter number between 10 - 9999">
+			<input type="number" name="flightNo">
 		</label><br>
 		<label>Date:
-			<input type="datetime-local">
+			<input type="datetime-local" name="departs">
 		</label><br>
 		<button type="submit">Submit Flight</button>
 	</form>
