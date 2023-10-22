@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dennelle Flights</title>
+</head>
+
+<body>
+	<h2>Flight List</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Airline</th>
+				<th>Airport</th>
+				<th>Flight Number</th>
+				<th>Flight Number</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+	</table>
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h2>Flight List</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Airline</th>
+				<th>Airport</th>
+				<th>Flight Number</th>
+				<th>Flight Number</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Write the line of EJS to iterate over movies using forEach -->
+
+			<% flightDocuments.forEach(f=> { %>
+
+				<tr>
+					<td>
+						<%= f.airline %>
+					</td>
+					<td>
+						<%= f.airport %>
+					</td>
+					<td>
+						<%= f.flightNumber %>
+					</td>
+					<td>
+						<%= f.date %>
+					</td>
+					<td>
+						<%= m.cast.join(', ') %></td>
+			<!-- finish the ternary expression to display
+						  ' Yes' or 'Nope' -->
+					<td>
+						<%= m.nowShowing ? 'Yes' : 'Nope' %>
+					</td>
+				</tr>
+				<!-- Close the forEach using EJS here -->
+
+
+				<% }) %>
+
+
+		</tbody>
+	</table>
+</body>
+
+</html>

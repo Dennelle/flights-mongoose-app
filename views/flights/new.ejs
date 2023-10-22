@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<h2>Create Flights</h2>
+	<form action="/flights" method="POST">
+		<label>Airline
+			<select name="airline">
+				<option value="Delta">G</option>
+				<option value="United">PG</option>
+				<option value="American">PG-13</option>
+				<option value="British Airways">R</option>
+			</select>
+		</label><br>
+        <label>Airport
+			<select name="airport">
+				<option value="JFK">G</option>
+				<option value="LGA">PG</option>
+				<option value="DCA">PG-13</option>
+				<option value="IAD">R</option>
+			</select>
+		</label><br>
+        <label>Flight Number:
+			<input type="number" name="enter number between 10 - 9999">
+		</label><br>
+		<label>Date:
+			<input type="datetime-local">
+		</label><br>
+		<button type="submit">Submit Flight</button>
+	</form>
+
+</body>
+
+</html>
