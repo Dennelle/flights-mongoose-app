@@ -4,10 +4,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Dennelle Flights</title>
-		<nav>
-		<a href="/flights">All Flights</a>
-		<a href="/flights/new">Add Flight</a>
-		</nav>
 </head>
 <body>
 	<h2>Flight List</h2>
@@ -26,19 +22,13 @@
 			<% flightDocs.forEach(f=> { %>
 
 				<tr>
-					<td>
-						<%= f.airline %>
+					<td><%= f.airline %></td>
+					<td><%= f.airport %></td>
+					<td><%= f.flightNo %></td>
+					<td><%= f.departs %>
 					</td>
 					<td>
-						<%= f.airport %>
-					</td>
-					<td>
-						<%= f.flightNo %>
-					</td>
-					<td>
-						<%= f.departs %>
-					</td>
-					<td>
+					<td><a href="/flights/<%= f._id %>">DETAILS</a></td>
 				<!-- Close the forEach using EJS here -->
 				<% }) %>
 
