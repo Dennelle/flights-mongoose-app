@@ -3,11 +3,9 @@ const mongoose = require('mongoose');
 const destinationSchema = new mongoose.Schema({
     airport: {
         type: String,
-        enum: ['AUS','DFW','DEN','LAX','SAN']
+        enum: ['JFK','LGA','DCA','IAD']
     },
-        arrival: {
-        type: Date
-    }
+    arrival: Date
 })
 
 const flightSchema = new mongoose.Schema({
@@ -28,9 +26,7 @@ const flightSchema = new mongoose.Schema({
         required: true
     },
     departs: Date,
-    destinations: {
     destinations: [destinationSchema]
-    }
     });
 
 

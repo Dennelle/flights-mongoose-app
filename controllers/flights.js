@@ -4,15 +4,17 @@ module.exports = {
     index,
     new: newFlights,
     create,
-    show
+    show,
+    addDestination
 }
 
 
 async function show(req, res) {
     console.log('something')
     try {
-      const flightDocuments = await Flight.findById(req.params.id);// req.params.id is a movies id
-      res.render("flights/show", {flight: flightDocuments});
+      const flightDocument = await Flight.findById(req.params.id);// req.params.id is a movies id
+      console.log(flightDocument, "<----this is the data")
+      res.render("flights/show", {flight: flightDocument});
     } catch(err){
       console.log(err)
       res.send(err)
@@ -42,4 +44,21 @@ async function create(req, res, next) {
     } catch (err) {
       res.send(err);
     }
+}
+
+async function addDestination(req, res){
+	try {
+		const flightDoc = await Flight.findById(req.params.id)
+		console.log(req.body, " <- contents of the form")
+		flightDoc.destinations.push(req.body)
+		await flightDoc.save()// this tells the db we add the review
+		res.redirect(`/flights/${flightDoc._id}`)
+		// res.redirect(`/flights/${req.params.id}`)
+		// Either redirect works ^
+
+	} catch(err){
+		console.log(err)
+		res.send(err)
+	}
+
 }

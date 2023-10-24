@@ -14,15 +14,16 @@
 	<br><br>
 	<h2>Destinations</h2>
 	<form id="add-review-form" method="POST" action="/flights/<%= flight._id %>/destinations">
-		<label>Destinations:</label>
-		<textarea name="content"></textarea>
-		<label>Add Airport:</label>
+		<label>Select a Destination:</label>
 		<select name="airport">
             <option value="JFK">JFK</option>
             <option value="LGA">LGA</option>
             <option value="DCA">DCA</option>
             <option value="IAD">IAD</option>
 		</select>
+        <label>Date:
+			<input type="datetime-local" name="arrival">
+		</label><br>
 		<input type="submit" value="Add Destination">
 	</form>
 
@@ -30,18 +31,17 @@
 		<table>
 			<thead>
 			  <tr>
-				<th>Date</th>
-				<th>Review</th>
-				<th>Rating</th>
+				<th>airport and arrival time</th>
 			  </tr>
 			</thead>
 			<tbody>
-			  <% flight.destinations.forEach(function(f) { %>
+			  <% flight.destinations.forEach(function(d) { %>
 				<tr>
-				  <td><%= f.createdAt.toLocaleDateString() %></td>
-				  <td><%= f.airport %></td>
-				  <td><%= f.arrival %></td>
+				    <td><%= d.airport %></td>
 				</tr>
+                <tr>
+                    <td><%= d.arrival %></td>
+                </tr>
 			  <% }); %>
 			</tbody>
 		  </table>
